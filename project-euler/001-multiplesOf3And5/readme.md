@@ -15,7 +15,7 @@ find the number which is dividable by 3 or 5. then add to the sum.
 
 **in solution-1.cpp**
 ```cpp
-    int n, sum = 0;
+    int N, sum = 0;
     cin >> N;
     for (int i=0; i<N ; i++) {
         if (i%3 == 0 || i%5 == 0){
@@ -87,7 +87,7 @@ which results a very shot code in solution-2.cpp
 
 **solution-2.cpp**
 ``` cpp
-    cin >> n;
+    cin >> N;
     cout << 3*Sn(N/3) + 5*Sn(N/5) - 15*Sn(N/15)
 ```
 
