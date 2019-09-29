@@ -5,9 +5,9 @@
 * https://www.projecteuler.net/problem=1
 * https://www.hackerrank.com/contests/projecteuler/challenges/euler001/problem
 
-if we list all the natural numbers below 1- that are multiples of 3 or 5, we get 3 5 6 9. the sum of these number is 23. 
+if we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3 5 6 9. the sum of these number is 23. 
 
-write the program that find the sum of N number.
+write the program that finds the sum of N number.
 
 #### First try
 So, I created the for loop that iterates from 1 to N to
@@ -26,9 +26,9 @@ find the number which is dividable by 3 or 5. then add to the sum.
 ```
 
 
-It worked ! but, It is not efficient at all because I tried to run with hackerrank and I was stucked with the test that limit the runtime.
+It worked! But, It is not efficient at all because I tried to run with hackerrank and I was stuck with the test that limits the runtime.
 
-therefore, It might be some solution which is faster? so, I realised, ..
+Therefore, It might be some faster solution? So, I tried again.
 
 #### Second try
 
@@ -54,7 +54,7 @@ back to high school (or forward), there is the formula for this arithmetic serie
 [read more here]( https://en.wikipedia.org/wiki/1_%2B_2_%2B_3_%2B_4_%2B_%E2%8B%AF )
 
 so, this should apply that 
-sum of multiples of 3, 5 is **3Sn + 5Sn**
+the sum of multiples of 3, 5 is **3Sn + 5Sn**
 
 but there is a point that
 ```
@@ -65,18 +65,18 @@ which means
 ```asm
     15 + 30 + 45 + ...
 ```
-is repeated inside the sum. therefore, we need to take them out but including
+It repeats inside the sum. therefore, we need to take them out but including
 > 3*Sn + 5*Sn - 15*Sn
 
-but where is the last dividable position before it exeed N ?
+but where is the last dividable position before it exceed N?
 
 we can find out easily by seeing that
 before for 3 at last number < 10
 > 3 + 6 + 9 
 
-its last position is 3 one, which is 10/3(round down) same as 5 and 15.
-therefore we can conclusion that
-the sum of multiples of 3 or 5 from begin to last number that < N is
+Its last position is 3 one, which is 10/3(round down) same as 5 and 15.
+therefore we can conclude that
+the sum of multiples of 3 or 5 from beginning to the last number that < N is
 ```
     sum = 3*Sn3 + 5*Sn5 - 15*Sn15
     Sn3 = (N/3)(N/3+1)/2;  //according to Sn
@@ -86,13 +86,13 @@ the sum of multiples of 3 or 5 from begin to last number that < N is
 which results a very shot code in solution-2.cpp
 
 **solution-2.cpp**
-```
+``` cpp
     cin >> n;
     cout << 3*Sn(N/3) + 5*Sn(N/5) - 15*Sn(N/15)
 ```
 
 where Sn is
-```
+``` cpp
     int Sn (int n)   {
         return n*(n+1)/2;
     }
