@@ -5,7 +5,7 @@
 *   https://projecteuler.net/problem=002
 *   https://www.hackerrank.com/contests/projecteuler/challenges/euler002/problem
 
-do, the question is we would like to find the sum of even Fibonacci numbers at the last value X which is less than N.
+the question is we would like to find the sum of even Fibonacci numbers at the last value X which is less than N.
 
 For example, let's N = 10 and the fibonacci list is 1,(2),3,5,(8),13, ... where number in () is the even fibonacci.
 Hence, X is 8, where 8 < N.
