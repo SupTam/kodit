@@ -1,0 +1,10 @@
+**/**.out
+**/**.bin
+
+
+**/**/**.out
+**/**/**.bin
+
+
+# not ready
+/kickstart/
